@@ -1,0 +1,110 @@
+// Import All Using Helpers Directory
+@use "helpers/usinghelpers" as *;
+@use "helpers/global";
+
+// Begining Of The Project
+
+.quiz {
+  width: 800px;
+  margin: 100px auto;
+  text-align: center;
+  border-bottom: 3px solid color(blu-color-01);
+  h1 {
+    background-color: color(blu-color-01);
+    padding: 20px;
+    color: color(wht-color-01);
+    border-radius: 7px;
+  }
+  &-settings__detailes {
+    .num-questions {
+      padding: 20px;
+      @include flex(null, null, space-between, center, 20px);
+      input {
+        width: 100px;
+        height: 50px;
+        text-align: center;
+      }
+    }
+    .questions-category {
+      padding: 20px;
+      @include flex(null, null, space-between, center, null);
+      select {
+        padding: 20px;
+      }
+    }
+    .quiz-difficulty {
+      padding: 20px;
+      @include flex(null, null, space-between, center, null);
+      h3 {
+        flex: 1;
+        text-align: left;
+      }
+      label {
+        margin-left: 20px;
+        cursor: pointer;
+        input {
+          cursor: inherit;
+        }
+      }
+    }
+    .submit {
+      background-color: color(blu-color-01);
+      color: color(wht-color-01);
+      border-radius: 7px;
+      width: 300px;
+      padding: 20px;
+      margin-bottom: 20px;
+      font-size: 25px;
+      font-weight: bold;
+      @include transition;
+      &:hover {
+        background-color: darken(color(blu-color-01), 10%);
+      }
+      &:active {
+        background-color: color(blu-color-07);
+      }
+    }
+  }
+}
+.quiz-questions {
+  width: 800px;
+  height: 500px;
+  margin: 100px auto;
+  text-align: center;
+  h1 {
+    margin-bottom: 30px;
+  }
+  .chooses {
+    width: fit-content;
+    label {
+      @include flex(row-reverse, null, null, center,  15px);
+      text-align: left;
+      margin-bottom: 20px;
+      &:hover{
+        color: color(blu-color-02);
+        cursor: pointer;
+      }
+      input {
+        width: 15px;
+        height: 15px;
+        accent-color: color(blu-color-02);
+        cursor: pointer;
+      }
+    }
+  }
+  .submit-question {
+    background-color: color(blu-color-02);
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 7px;
+    width: 250px;
+    &:hover {
+      background-color: darken(color(blu-color-02), 10%);
+    }
+    &:active {
+      background-color: color(blu-color-02);
+    }
+  }
+}
